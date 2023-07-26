@@ -18,25 +18,25 @@
 <body>
   <div class="slider">
     <div class="slider-label">
-      <span>Cost Importance:</span>
+      <span>Cost:</span>
       <span id="curvature-weight-value">1</span>
     </div>
     <input type="range" id="curvature-weight" min="1" max="3" value="1" step="1">
   </div>
   <div class="slider">
     <div class="slider-label">
-      <span>Distance Importance:</span>
+      <span>Distance:</span>
       <span id="distance-weight-value">2</span>
     </div>
     <input type="range" id="distance-weight" min="1" max="3" value="2" step="1">
   </div>
-  <button id="select-path">Find Optimum Path</button>
-  <svg width="515" height="400"></svg>
+  <button id="select-path">Select Optimum Path</button>
+  <svg width="500" height="400"></svg>
 
   <script>
     // Set constant coordinates for the start and end points
-    var origin = { x: 45, y: 200 };
-    var destination = { x: 455, y: 200 };
+    var origin = { x: 40, y: 200 };
+    var destination = { x: 450, y: 200 };
 
     // Create the SVG container
     var svg = d3.select("svg");
@@ -72,9 +72,9 @@
 
     // Add label for the starting point
     svg.append("text")
-      .attr("x", origin.x - 45)
+      .attr("x", origin.x - 40)
       .attr("y", origin.y - 10)
-      .text("Point A")
+      .text("Start")
       .attr("fill", "black");
 
     // Draw the ending point circle
@@ -88,7 +88,7 @@
     svg.append("text")
       .attr("x", destination.x + 10)
       .attr("y", destination.y - 10)
-      .text("Point B")
+      .text("End")
       .attr("fill", "black");
       
     // Add label for the lines 
